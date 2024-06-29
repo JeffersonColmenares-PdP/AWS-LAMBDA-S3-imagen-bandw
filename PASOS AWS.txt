@@ -1,0 +1,58 @@
+Lambda
+- Crear Función
+	Crear desde cero
+	Puse nombre a la función
+	Seleccione lenguaje programación: Python 3.9
+	Crear una Función
+
+- Agregar desencadenador(Configuracion)
+	Selecciona origen S3
+	Bucket --> Selecciono mi bucket
+	Prefijo --> Agrego ruta de carpetas --> carpeta1/imagen/
+	Aceptar condiciones
+	Agregar
+
+- Crear Layer
+Resumen: Para importar librerias que no existen en lambda. Las importamos en .zip, creando una nueva capa(layer) dentro del lambda
+	Añadir una capa
+	Crear una nueva capa
+	Agrego Nombre a la capa
+	Cargar - Cargamos el .zip
+	Crear
+	Cuando ya este creado copiamos el ARN
+
+- Agregar Layer (Capa al lambda)
+	Añadir Capa
+	Especificar ARN
+	Pegamos el ARN que copiamos al crear el layer
+
+- Permisos (Configuracion)
+	Selecciono el nombre del rol
+	Amplio el permiso en el +
+	Selecciono Editar - Visual
+	Agrego los permisos GetObject - PutObject - ListBucket.
+	Debo seleccionar que ese para todos los recursos.
+	Aceptar
+
+- Crear el .zip para cargar en el layer (Utilizamos Cloud9)
+	Crear entorno
+	Agrego Nombre
+	Crear
+	Esperamos que se cree el entorno
+	Seleccionamos opción Abrir
+	Escribimos esto en la consola
+	mkdir python --- > crear carpeta
+	pip3 install Pillow -t python -->Instalar Pillow
+	zip -r pillow-layer.zip python --> Crear el .zip con lo que instalamos. 
+	Descargamos el .zip que creamos
+	Eliminamos el entorno para evitar gastos
+
+- S3
+	Crear Bucket
+	Pasos..
+	Nombre del bucket
+	Crear Bucket
+	Creo dos carpetas dentro del bucket carpeta1/imagen/
+
+
+
